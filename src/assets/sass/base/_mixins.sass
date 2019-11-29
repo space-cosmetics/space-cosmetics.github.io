@@ -1,0 +1,35 @@
+@mixin r($width)
+  @media only screen and (max-width: $width+ "px")
+    @content
+
+@mixin rmin($width)
+  @media only screen and (min-width: $width + 'px')
+    @content
+
+@mixin fluid-text($min-size: 1, $max-size: 1.4, $min-width: 20, $max-width: 100, $property: font-size, $unit: px)
+  #{$property}: #{$max-size}#{$unit}
+  #{$property}: calc(#{$min-size}#{$unit} + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-width}#{$unit}) / (#{$max-width} - #{$min-width})))
+  @media (max-width: #{$min-width}#{$unit})
+    #{$property}: #{$min-size}#{$unit}
+  @media (min-width: #{$max-width}#{$unit})
+    #{$property}: #{$max-size}#{$unit}
+
+/**
+ * Load local fonts
+ */
+@mixin font($alias, $name, $weight, $style)
+  @font-face
+    font-family: $alias
+    src: url('~@/assets/fonts/' + $alias + '/' + $name + '.ttf') format('truetype')
+    font-weight: $weight
+    font-style: $style
+    font-display: swap
+
+/**
+ * Clear
+ */
+@mixin clr()
+  &:after
+    content: " "
+    display: table
+    clear: both

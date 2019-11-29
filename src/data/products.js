@@ -1,0 +1,185 @@
+const products = JSON.parse(`[
+  {
+    "_id": 0,
+    "vendor_code": 1,
+    "manufacturer": "Space Cosmetics",
+    "name": "Milky Way",
+    "type": "Лосьон для пластика",
+    "description": "Лосьон для использования на пластиковых элементах интерьера автомобиля. Повышенное содержание активных компонентов снижает расход. Оставляет матовый блеск. Имеет приятный аромат.",
+    "price": 150,
+    "volume": 500,
+    "specification": {},
+    "size": "big"
+  },
+  {
+    "_id": 5,
+    "vendor_code": 6,
+    "manufacturer": "Space Cosmetics",
+    "name": "Supernova",
+    "type": "SiO2 силант",
+    "description": "Спрей - силант с высоким содержанием SiO2 для нанесения на сухой кузов автомобиля.Создает эффект гладкости и придает гидрофобность поверхности сроком до 6 месяцев. Может быть использован в качестве закрывающего покрытия под керамику.",
+    "price": 1350,
+    "volume": 500,
+    "specification": {},
+    "size": "small"
+  },
+  {
+    "_id": 1,
+    "vendor_code": 2,
+    "manufacturer": "Space Cosmetics",
+    "name": "Spectrum",
+    "type": "Химчистка салона с кондиционером",
+    "description": "PH - нейтральный состав для деликатной химчистки. Кондиционирующие добавки делают поверхность мягкой и приятной на ощупь. Разведение: 1к10 - 1к15",
+    "price": 170,
+    "volume": 500,
+    "specification": {},
+    "size": "small"
+  },
+  {
+    "_id": 2,
+    "vendor_code": 3,
+    "manufacturer": "Space Cosmetics",
+    "name": "Apophis",
+    "type": "Антибитум",
+    "description": "Средство разработано для быстрого и эффективного удаления битума с ЛКП автомобиля. Не имеет резкого запаха.",
+    "price": 150,
+    "volume": 500,
+    "specification": {},
+    "size": "small"
+  },
+  {
+    "_id": 3,
+    "vendor_code": 4,
+    "manufacturer": "Space Cosmetics",
+    "name": "Nebula",
+    "type": "Чернение внешнего пластика",
+    "description": "Данное средство разработано для восстановления есстественного цвета нуражнего пластика. Отсутсвие растворителей в составе обеспечивает безопасность для любого типа пластика.",
+    "price": 450,
+    "volume": 500,
+    "specification": {},
+    "size": "small"
+  },
+  {
+    "_id": 4,
+    "vendor_code": 5,
+    "manufacturer": "Space Cosmetics",
+    "name": "Black Matter",
+    "type": "Чернение резины",
+    "description": "Чернение резины на основе функциональных силиконов. Данное средство имеет густую структуру, что позволяет сократить расход. Оставляет насыщенный черный цвет.",
+    "price": 370,
+    "volume": 500,
+    "specification": {},
+    "size": "small"
+  },
+  {
+    "_id": 6,
+    "vendor_code": 7,
+    "manufacturer": "Space Cosmetics",
+    "name": "Pole Star",
+    "type": "Полимерное покрытие",
+    "description": "Полимер для нанесения на мокрый кузов автомобиля. Благодаря наличию сольвента в составе обладет очищающим эффектом. Придает поверхности насыщенность цвета и гидрофобный эффект сроком на 1-2 месяца.",
+    "price": 450,
+    "volume": 500,
+    "specification": {},
+    "size": "small"
+  },
+  {
+    "_id": 7,
+    "vendor_code": 8,
+    "manufacturer": "Space Cosmetics",
+    "name": "Quazar+",
+    "type": "Кварцевое покрытие Quazar+ концентрат",
+    "description": "Концентрат быстрого кварцевого покрытия. Обладает теми же характеристиками, что и Quazar.Разведение водой: 1к4 - 1к 8.",
+    "price": 2000,
+    "volume": 500,
+    "specification": {},
+    "size": "big"
+  },
+  {
+    "_id": 8,
+    "vendor_code": 9,
+    "manufacturer": "Space Cosmetics",
+    "name": "Eclipse",
+    "type": "Кондиционер для кожи",
+    "description": "Кондиционер кожи на основе ланолина. Данный состав отлично увлажняет кожанные поверхности и придает эластичнось. Оставляет приятный аромат.",
+    "price": 390,
+    "volume": 500,
+    "specification": {},
+    "size": "small"
+  },
+  {
+    "_id": 9,
+    "vendor_code": 10,
+    "manufacturer": "Space Cosmetics",
+    "name": "Radience",
+    "type": "Очиститель кожи",
+    "description": "PH - нейтральный деликатный очиститель кожи. Имеет отличную пенообразующую способность. Эффективно очищает все основные типы загрязнений.",
+    "price": 250,
+    "volume": 500,
+    "specification": {},
+    "size": "small"
+  },
+  {
+    "_id": 10,
+    "vendor_code": 11,
+    "manufacturer": "Space Cosmetics",
+    "name": "Emission",
+    "type": "Консервант мотора",
+    "description": "Состав на основе эмульгированных силиконов предназначен для улучшения внешнего вида и защиты мотора от воздействия окружающей среды.",
+    "price": 390,
+    "volume": 500,
+    "specification": {},
+    "size": "small"
+  },
+  {
+    "_id": 11,
+    "vendor_code": 12,
+    "manufacturer": "Space Cosmetics",
+    "name": "First",
+    "type": "Ручной автошампунь",
+    "description": "Ручной шампунь для нанесения на первом этапе ручной мойки. PH - нейтральный состав. Разведение для пенокомплекта :1к10 - 1к 20",
+    "price": 110,
+    "volume": 500,
+    "specification": {},
+    "size": "small"
+  },
+  {
+    "_id": 12,
+    "vendor_code": 13,
+    "manufacturer": "Space Cosmetics",
+    "name": "Second",
+    "type": "Ручной автошампунь",
+    "description": "Ручной шампунь для нанесения на втором этапе ручной мойки. PH - нейтральный состав. Благодаря налчию SiO2 в составе обладает мощным гидрофобным эффектом.Разведение для пенокомплекта: 1к10 - 1к20",
+    "price": 350,
+    "volume": 500,
+    "specification": {},
+    "size": "small"
+  },
+  {
+    "_id": 13,
+    "vendor_code": 14,
+    "manufacturer": "Space Cosmetics",
+    "name": "Starfall",
+    "type": "Антидождь для стекол",
+    "description": "Однокомпонентное нано покрытие для стекол. Быстро вступает в реакцию, тем самым сокращая время нанесения. Начинает работать с 50 км/ч. Срок службы до 3 месяцев.",
+    "price": 650,
+    "volume": 500,
+    "specification": {},
+    "size": "small"
+  },
+  {
+    "_id": 14,
+    "vendor_code": 15,
+    "manufacturer": "Space Cosmetics",
+    "name": "Meteor",
+    "type": "Диэлектрический очиститель  мотора",
+    "description": "Диэлектрический состав для мойки подкапотного пространства разработан для безопасной мойки. Электропроводимость данного средства ниже в 200 раз, чем у обычного щелочного средства.",
+    "price": 300,
+    "volume": 500,
+    "specification": {},
+    "size": "big"
+  }
+]`)
+
+
+export default products

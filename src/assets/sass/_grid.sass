@@ -1,0 +1,24 @@
+.grid
+  display: flex
+  flex-wrap: wrap
+  width: calc(100% + #{$grid-gap})
+  margin-left: -$grid-gap
+
+.item
+  margin-left: $grid-gap
+  margin-bottom: $grid-gap
+
+.item-1
+  width: calc(100% - #{$grid-gap})
+
+.item-2
+  width: calc(100% - #{$grid-gap})
+  +rmin(576)
+    width: calc(100% / 2 - #{$grid-gap})
+
+.item-3
+  width: calc(100% - #{$grid-gap})
+  +rmin(400)
+    width: calc(100% / 2 - #{$grid-gap})
+  +rmin(768)
+    width: calc(100% / 3 - #{$grid-gap})
