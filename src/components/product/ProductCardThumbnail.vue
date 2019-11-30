@@ -41,7 +41,7 @@ export default {
         if (image.isIntersecting) {
           this.intersected = true
           this.observer.disconnect()
-          this.$emit('intersect')
+          // this.$emit('intersect')
         }
 
       }, {

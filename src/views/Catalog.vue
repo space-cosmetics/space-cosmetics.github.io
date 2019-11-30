@@ -35,15 +35,6 @@ export default {
   created() {
     this.products = this.$store.getters.products
   },
-  // methods: {
-  //   addProduct() {
-  //     const len = this.products.length
-  //     this.products.push(products[len])
-  //     setTimeout(() => {
-  //       this.catalog.appended(this.$refs.items[len])
-  //     }, 0)
-  //   }
-  // },
   mounted() {
     this.$nextTick(() => {
       this.catalog = new Isotope(this.$refs.catalog, {
