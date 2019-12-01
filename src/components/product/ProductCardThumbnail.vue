@@ -37,16 +37,13 @@ export default {
   mounted() {
     if ('IntersectionObserver' in window) {
       this.observer = new IntersectionObserver(entries => {
-        const image = entries[0]
-        if (image.isIntersecting) {
-          this.intersected = true
-          this.observer.disconnect()
-          // this.$emit('intersect')
-        }
+        if (!entries[0].isIntersecting) return
 
+        this.intersected = true
+        this.observer.disconnect()
       }, {
           rootMargin: '150px',
-          threshold: 0.1
+          threshold: 0.1,
       })
 
       this.observer.observe(this.$el)
